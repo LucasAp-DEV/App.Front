@@ -5,9 +5,9 @@ const User = () => {
 
     const form = () => {
         return(
-            <h1>
-                Hello world
-            </h1>
+            <div>
+                <img src="sesmt.jpg" alt="Minha imagen" width="200" height="175"/>
+            </div>
         )
     }
     

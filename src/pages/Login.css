@@ -1,3 +1,4 @@
-.destaque {
-    background-color: rgba(255, 255, 0, 0.884);
+.cabecario1 {
+    background-color: rgba(255, 255, 0, 0.884); /*cor do fundo da tela*/
+    display: flex; /*Faz a cor do fundo ocupar todo o espaço*/
   }

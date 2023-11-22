@@ -5,8 +5,13 @@ const User = () => {
 
     const cabecario = () => {
         return(
-            <div className='destaque'>
-                <img src="sesmit1.jpg" alt="Minha imagen" width="200" height="175"/>
+            <div className='cabecario1'>
+                <div>
+                    <h1> Teste, teste  </h1> 
+                </div>
+                <div>
+                    <h1>Teste 2 </h1>
+                </div>
             </div>
         )
     }

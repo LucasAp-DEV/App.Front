@@ -7,10 +7,10 @@ const User = () => {
         return(
             <div className='cabecario1'>
                 <div>
-                    <h1> Teste, teste  </h1> 
+                    <h1> Teste Lukas </h1> 
                 </div>
                 <div>
-                    <h1>Teste 2 </h1>
+                    <h1> Logo  </h1>
                 </div>
             </div>
         )

@@ -31,18 +31,17 @@ const Login = () => {
         <div className='container'>
             <div className='formContainer'>
                 <Input
-                    label="Email "
                     name="emailInput"
                     value={email}
                     onChange={onChangeEmail}
+                    placeholder={"Email"}
                 />
                 <Input 
-                    label="Senha "
+                    placeholder={"Senha"}
                     type='password'
                     name="passwordInput"
                     value={password}
                     onChange={onChangePassword}
-                    errorMessage={passwordError}
                 />
                 <p>
                     <Botton onclick={onSubmit} text="Entrar" />

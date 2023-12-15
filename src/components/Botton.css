@@ -1,0 +1,14 @@
+
+  button {
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: #4caf50; /* cor de fundo do botão */
+    color: #ffffff; /* cor do texto do botão */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #45a049; /* Cor de fundo alterada no hover */
+  }

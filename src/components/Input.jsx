@@ -1,4 +1,4 @@
-const Input = ({label, inputName, errorMessage, value, onChange, type = "text"}) => {
+const Input = ({label, inputName, errorMessage, value, onChange, type = "text", placeholder}) => {
     return (
         <div>
             <div>
@@ -9,6 +9,7 @@ const Input = ({label, inputName, errorMessage, value, onChange, type = "text"})
                     name={inputName}
                     value={value}
                     onChange={onChange}
+                    placeholder={placeholder}
                 />
             </div>
             {

@@ -1,16 +1,14 @@
-import './Dashboard.css';
+import './Dashboard.css'
 
 
 const Dashboard = () => {
 
-
-
     return (
         <div>
-            
+            <h1> Dashbooard </h1>
         </div>
     );
 }
 
 
-export default Login;
+export default Dashboard;

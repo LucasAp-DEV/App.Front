@@ -1,5 +1,7 @@
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -11,8 +13,8 @@ function App() {
       element: <Login />
     },
     {
-      path: '/Pag1',
-      element: <Pag1 />
+      path: '/Dashboard',
+      element: <Dashboard />
     }
   ])
 

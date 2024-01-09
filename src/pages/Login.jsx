@@ -19,9 +19,14 @@ const Login = () => {
         setPassword(event.target.value)
     }
 
+    const rotas = () => {
+      navigate('/Dashboard')
+    }
+    
+
     const onSubmit = async () => {
         try {
-            const response = await fetch('http://localhost:3001/api/login', {
+            const response = await fetch('http:/localhost:3001/login', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -42,7 +47,6 @@ const Login = () => {
             } catch (error) {
               console.error('Erro de rede:', error);
             }
-      
         
         console.log(user, password)
     }

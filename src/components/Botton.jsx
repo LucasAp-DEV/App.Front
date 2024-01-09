@@ -1,7 +1,7 @@
 import React from "react";
-import './Botton.css'
+import './Button.css'
 
-const Botton = ({ onclick, text}) => {
+const Button = ({ onclick, text}) => {
     return (
         <button onClick={onclick}>
             {text}
@@ -9,4 +9,4 @@ const Botton = ({ onclick, text}) => {
     )
 }
 
-export default Botton
+export default Button

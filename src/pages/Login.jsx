@@ -1,8 +1,8 @@
 import './Login.css'
 import Input from '../components/Input';
-import Botton from '../components/Botton';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../components/Botton';
 
 const Login = () => {
 
@@ -36,6 +36,8 @@ const Login = () => {
                 const data = await response.json();
                 console.log(data.message);
                 navigate('/Pag1')
+              } else {
+                console.error('Falha no login');
               }
             } catch (error) {
               console.error('Erro de rede:', error);
@@ -62,7 +64,7 @@ const Login = () => {
                     onChange={onChangePassword}
                 />
                 <p>
-                    <Botton onclick={onSubmit} text="Entrar" />
+                    <Button onclick={onSubmit} text="Entrar" />
                 </p>
             </div>
         </div>

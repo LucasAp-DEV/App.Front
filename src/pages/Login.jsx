@@ -6,7 +6,7 @@ import Button from '../components/Botton';
 
 const Login = () => {
 
-    const [user, setUser] = useState()
+    const [name, setUser] = useState()
     const [password, setPassword] = useState()
 
     const navigate = useNavigate()
@@ -26,21 +26,20 @@ const Login = () => {
 
     const onSubmit = async () => {
         try {
-            const response = await fetch('http:/localhost:3001/login', {
+            const response = await fetch('http://localhost:8080/user', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                user,
-                password,
+                name,
               }),
             });
 
             if (response.ok) {
                 const data = await response.json();
                 console.log(data.message);
-                navigate('/Pag1')
+                navigate('/Dashboard')
               } else {
                 console.error('Falha no login');
               }
@@ -48,7 +47,7 @@ const Login = () => {
               console.error('Erro de rede:', error);
             }
         
-        console.log(user, password)
+        console.log(name)
     }
 
     return (
@@ -57,7 +56,7 @@ const Login = () => {
                 <Input
                     placeholder={"Usuário"}
                     name="UserInput"
-                    value={user}
+                    value={name}
                     onChange={onChangeUser}
                 />
                 <Input 

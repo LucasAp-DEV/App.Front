@@ -1,5 +1,5 @@
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import Login from './pages/Login/Login';
+import Dashboard from './pages/Dashboard/Dashboard';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Outlet } from 'react-router-dom';
 

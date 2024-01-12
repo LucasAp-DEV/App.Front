@@ -1,12 +1,12 @@
 import './Login.css'
-import Input from '../components/Input';
+import Input from '../../components/Button/Input';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../components/Botton';
+import Button from '../../components/Button/Botton';
 
 const Login = () => {
 
-    const [name, setUser] = useState()
+    const [login, setUser] = useState()
     const [password, setPassword] = useState()
 
     const navigate = useNavigate()
@@ -26,37 +26,39 @@ const Login = () => {
 
     const onSubmit = async () => {
         try {
-            const response = await fetch('http://localhost:8080/user', {
+            const response = await fetch('http://localhost:8080/auth/login', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                name,
+                login,
+                password,
               }),
             });
 
             if (response.ok) {
                 const data = await response.json();
-                console.log(data.message);
+                const authToken = data.token
+                console.log('Token recebido:', authToken) //Retirar depois o Token
                 navigate('/Dashboard')
-              } else {
-                console.error('Falha no login');
-              }
+                } else {
+                  console.error("Erro de login")
+                }
             } catch (error) {
               console.error('Erro de rede:', error);
             }
         
-        console.log(name)
+        console.log(login, password)
     }
 
     return (
         <div className='container'>
             <div className='formContainer'>
                 <Input
-                    placeholder={"Usuário"}
+                    placeholder={"Login"}
                     name="UserInput"
-                    value={name}
+                    value={login}
                     onChange={onChangeUser}
                 />
                 <Input 

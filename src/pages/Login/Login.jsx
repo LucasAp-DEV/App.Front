@@ -8,6 +8,7 @@ const Login = () => {
 
     const [login, setUser] = useState()
     const [password, setPassword] = useState()
+    const [errorLogin, setErrorLogin] = useState();
 
     const navigate = useNavigate()
 
@@ -18,14 +19,9 @@ const Login = () => {
     const onChangePassword = (event) => {
         setPassword(event.target.value)
     }
-
-    const rotas = () => {
-      navigate('/Dashboard')
-    }
     
-
     const onSubmit = async () => {
-        try {
+      try{
             const response = await fetch('http://localhost:8080/auth/login', {
               method: 'POST',
               headers: {
@@ -43,38 +39,47 @@ const Login = () => {
                 console.log('Token recebido:', authToken) //Retirar depois o Token
                 navigate('/Dashboard')
                 } else {
-                  console.error("Erro de login")
+                  const data = await response.json();
+                  setErrorLogin(data.error || 'Erro de login');
+                  console.log("Erro no login")
                 }
-            } catch (error) {
-              console.error('Erro de rede:', error);
-            }
-        
+              } catch (error) {
+                setErrorLogin('Login ou senha Incorreta');
+                console.error('Erro de rede:', error);
+              }
+            
         console.log(login, password)
     }
 
     return (
-        <div className='container'>
-            <div className='formContainer'>
-                <Input
-                    placeholder={"Login"}
-                    name="UserInput"
-                    value={login}
-                    onChange={onChangeUser}
-                />
-                <Input 
-                    placeholder={"Senha"}
-                    type='password'
-                    name="passwordInput"
-                    value={password}
-                    onChange={onChangePassword}
-                />
-                <p>
-                    <Button onclick={onSubmit} text="Entrar" />
-                </p>
-            </div>
+      <div className='container'>
+        <div className='formContainer'>
+          <Input
+            placeholder='Login'
+            name='UserInput'
+            id='UserInput'
+            value={login}
+            onChange={onChangeUser}
+          />
+          <Input
+            placeholder='Senha'
+            type='password'
+            name='passwordInput'
+            id='passwordInput'
+            value={password}
+            onChange={onChangePassword}
+          />
+          <p>
+            <Button onClick={onSubmit} text='Entrar' />
+          </p>
         </div>
+        <div>
+          {errorLogin && <p className="error">{errorLogin}</p>}
+        </div>
+      </div>
+      
     );
+    
 }
-
 
 export default Login;

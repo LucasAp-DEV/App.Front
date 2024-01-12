@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .formContainer {
@@ -20,6 +21,14 @@
   border-style: solid;
 }
 
-.errorMessage {
-  color: rgb(0, 0, 0);
+.error {
+  padding: 10px 50px;
+  font-size: 20px;
+  background-color: #e42424e7;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

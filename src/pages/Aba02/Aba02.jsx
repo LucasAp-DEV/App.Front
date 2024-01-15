@@ -1,23 +1,22 @@
-import './Dashboard.css'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Button/Botton';
 
 
-const Dashboard = () => {
+const Aba02 = () => {
 
     const navigate = useNavigate()
 
     const rotas = () => {
-        navigate("/Aba01");
+        navigate("/");
     }
 
 
     return (
         <div>
-            <Button onClick={rotas} text='Entrar' />
+            <Button onClick={rotas} text='Login' />
         </div>
     );
 }
 
 
-export default Dashboard;
+export default Aba02;

@@ -57,7 +57,6 @@ const Login = () => {
           <Input
             placeholder='Login'
             name='UserInput'
-            id='UserInput'
             value={login}
             onChange={onChangeUser}
           />
@@ -65,7 +64,6 @@ const Login = () => {
             placeholder='Senha'
             type='password'
             name='passwordInput'
-            id='passwordInput'
             value={password}
             onChange={onChangePassword}
           />

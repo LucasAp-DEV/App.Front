@@ -36,7 +36,7 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 const authToken = data.token
-                console.log('Token recebido:', authToken) //Retirar depois o Token
+//                console.log('Token recebido:', authToken)
                 setTrueLogin('Login Realizado.');
                 navigate('/Dashboard');
                 }else {
@@ -65,7 +65,6 @@ const Login = () => {
             </div> 
         <div>
           {errorLogin && <p className="error">{errorLogin}</p> }
-          {trueLogin && <p className="error">{trueLogin}</p> }
         </div>
       </div>
       

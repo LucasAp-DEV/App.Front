@@ -15,6 +15,9 @@ const Dashboard = () => {
     return (
         <div>
             <Button onClick={rotas} text='Entrar' />
+            <Button onClick={rotas} text='Entrar' />
+            <Button onClick={rotas} text='Entrar' />
+            <Button onClick={rotas} text='Entrar' />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import Button from '../../components/Button/Botton';
+import Button from '../../components/Button/Button';
 
 
 const Aba01 = () => {

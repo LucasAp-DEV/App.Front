@@ -1,19 +1,18 @@
 import './Login.css'
-import Input from '../../components/Button/Input';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button/Botton';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 const Login = () => {
 
-    const [login, setUser] = useState()
+    const [login, setLogin] = useState()
     const [password, setPassword] = useState()
     const [errorLogin, setErrorLogin] = useState();
 
     const navigate = useNavigate()
 
-    const onChangeUser = (event) => {
-        setUser(event.target.value)
+    const onChangeLogin = (event) => {
+        setLogin(event.target.value)
     }
 
     const onChangePassword = (event) => {
@@ -53,26 +52,19 @@ const Login = () => {
 
     return (
       <div className='container'>
-        <div className='formContainer'>
-          <Input
-            placeholder='Login'
-            name='UserInput'
-            value={login}
-            onChange={onChangeUser}
-          />
-          <Input
-            placeholder='Senha'
-            type='password'
-            name='passwordInput'
-            value={password}
-            onChange={onChangePassword}
-          />
-          <p>
-            <Button onClick={onSubmit} text='Entrar' />
-          </p>
-        </div>
+          <div className='container1'>
+            <div className='login'>
+              <LoginForm
+              login={login}
+              password={password}
+              onChangeLogin={onChangeLogin}
+              onChangePassword={onChangePassword}
+              onSubmit={onSubmit}
+              />
+            </div>
+          </div>
         <div>
-          {errorLogin && <p className="error">{errorLogin}</p>}
+          {errorLogin && <p className="error">{errorLogin}</p> }
         </div>
       </div>
       

@@ -39,14 +39,11 @@ const Login = () => {
                 console.log('Token recebido:', authToken) //Retirar depois o Token
                 setTrueLogin('Login Realizado.')
                 navigate('/Dashboard')
-                } else {
-                  const data = await response.json();
-                  setErrorLogin(data.error || 'Erro de login');
                 }
-              } catch (error) {
-                setErrorLogin('Login ou senha Incorreta');
-                console.error('Erro de rede:', error);
-              }
+                  } catch (error) {
+                    setErrorLogin('Login ou senha Incorreta');
+                    console.error('Erro de rede:', error);
+                  }
             
         console.log(login, password)
     }

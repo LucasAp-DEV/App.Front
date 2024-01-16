@@ -36,7 +36,9 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 const authToken = data.token
-//                console.log('Token recebido:', authToken)
+                localStorage.setItem("token", authToken); //Inserir o token no Storage
+                localStorage.getItem("token"); // buscar o token no Storage
+                console.log('Token recebido:', authToken)
                 setTrueLogin('Login Realizado.');
                 navigate('/Dashboard');
                 }else {

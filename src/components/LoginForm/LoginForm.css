@@ -1,14 +1,14 @@
 .formContainer1 {
-  width: 300px; /* Ajuste conforme necessário */
+  width: 300px;
   margin: auto;
   text-align: center;
 }
 
 .formContainer1 input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
+  display: flex;
+  width: 95%;
+  margin-bottom: 35px;
+  padding: 10px;
 }
 
 .formContainer1 p {

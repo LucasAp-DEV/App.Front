@@ -8,6 +8,7 @@ const Login = () => {
     const [login, setLogin] = useState()
     const [password, setPassword] = useState()
     const [errorLogin, setErrorLogin] = useState();
+    const [trueLogin, setTrueLogin] = useState("");
 
     const navigate = useNavigate()
 
@@ -36,11 +37,11 @@ const Login = () => {
                 const data = await response.json();
                 const authToken = data.token
                 console.log('Token recebido:', authToken) //Retirar depois o Token
+                setTrueLogin('Login Realizado.')
                 navigate('/Dashboard')
                 } else {
                   const data = await response.json();
                   setErrorLogin(data.error || 'Erro de login');
-                  console.log("Erro no login")
                 }
               } catch (error) {
                 setErrorLogin('Login ou senha Incorreta');
@@ -52,7 +53,6 @@ const Login = () => {
 
     return (
       <div className='container'>
-          <div className='container1'>
             <div className='login'>
               <LoginForm
               login={login}
@@ -61,10 +61,10 @@ const Login = () => {
               onChangePassword={onChangePassword}
               onSubmit={onSubmit}
               />
-            </div>
-          </div>
+            </div> 
         <div>
           {errorLogin && <p className="error">{errorLogin}</p> }
+          {trueLogin && <p className="error">{trueLogin}</p> }
         </div>
       </div>
       

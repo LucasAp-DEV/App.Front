@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button';
 
 const LoginForm = ({ login, password, onChangeUser, onChangePassword, onSubmit }) => {
   return (
-    <div className='.formContainer1'>
+    <div className='formContainer1'>
       <Input
         placeholder='Login'
         name='UserInput'

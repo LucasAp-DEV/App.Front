@@ -37,15 +37,19 @@ const Login = () => {
                 const data = await response.json();
                 const authToken = data.token
                 console.log('Token recebido:', authToken) //Retirar depois o Token
-                setTrueLogin('Login Realizado.')
-                navigate('/Dashboard')
+                setTrueLogin('Login Realizado.');
+                navigate('/Dashboard');
+                }else {
+                  const data = await response.json();
+                  setErrorLogin(data.error || 'Erro de login');
+                  console.log("Erro no login")
                 }
                   } catch (error) {
                     setErrorLogin('Login ou senha Incorreta');
                     console.error('Erro de rede:', error);
                   }
             
-        console.log(login, password)
+        console.log(login, password);
     }
 
     return (

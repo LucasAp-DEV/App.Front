@@ -3,17 +3,17 @@ import './LoginForm.css'
 import Input from '../../components/Button/Input';
 import Button from '../../components/Button/Button';
 
-const LoginForm = ({ login, password, onChangeUser, onChangePassword, onSubmit }) => {
+const LoginForm = ({ login, password, onChangeLogin, onChangePassword, onSubmit }) => {
   return (
     <div className='formContainer1'>
       <Input
-        placeholder='Login'
-        name='UserInput'
+        placeholder='Login:'
+        name='LoginInput'
         value={login}
-        onChange={onChangeUser}
+        onChange={onChangeLogin}
       />
       <Input
-        placeholder='Senha'
+        placeholder='Senha:'
         type='password'
         name='passwordInput'
         value={password}

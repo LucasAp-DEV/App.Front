@@ -8,7 +8,6 @@ const Login = () => {
     const [login, setLogin] = useState()
     const [password, setPassword] = useState()
     const [errorLogin, setErrorLogin] = useState();
-    const [trueLogin, setTrueLogin] = useState("");
 
     const navigate = useNavigate()
 
@@ -37,10 +36,7 @@ const Login = () => {
                 const data = await response.json();
                 const authToken = data.token
                 localStorage.setItem("token", authToken); //Inserir o token no Storage
-                localStorage.getItem("token"); // buscar o token no Storage
-                console.log('Token recebido:', authToken)
-                setTrueLogin('Login Realizado.');
-                navigate('/Dashboard');
+                navigate('/');
                 }else {
                   const data = await response.json();
                   setErrorLogin(data.error || 'Erro de login');

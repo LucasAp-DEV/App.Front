@@ -1,5 +1,5 @@
 import './Dashboard.css'
-import { useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import Button from '../../components/Button/Button';
 
 
@@ -14,10 +14,13 @@ const Dashboard = () => {
 
     return (
         <div>
-            <Button onClick={rotas} text='Entrar' />
-            <Button onClick={rotas} text='Entrar' />
-            <Button onClick={rotas} text='Entrar' />
-            <Button onClick={rotas} text='Entrar' />
+            <div className='dashboard'>
+                <Button onClick={rotas} text='Login' />
+                <h1>Dashborad</h1>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 }

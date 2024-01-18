@@ -13,22 +13,20 @@ function App() {
   useEffect(() => {
     if(!isAuthentication()) {
       navigate("/login")
-      console.log(isAuthentication())
     }
 
   },[])
 
 
   return (
-    <>
         <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Login />} />
               <Route path="/" element={<Dashboard />}>
-              <Route path="aba01" element={<Aba01 />} />
-              <Route path="aba02" element={<Aba02 />} />
+                <Route path="aba01" element={<Aba01 />} />
+                <Route path="aba02" element={<Aba02 />} />
               </Route>
         </Routes>
-    </>
     );
 }
 

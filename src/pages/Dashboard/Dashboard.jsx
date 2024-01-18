@@ -15,8 +15,15 @@ const Dashboard = () => {
     return (
         <div>
             <div className='dashboard'>
-                <Button onClick={rotas} text='Login' />
-                <h1>Dashborad</h1>
+                <a href='/' className='icon'> Dashboard</a>
+                <ul>
+                    <li>
+                        <a href='/aba01'> Aba01 </a>
+                    </li>
+                    <li>
+                        <a href='/aba02'> aba02 </a>
+                    </li>
+                </ul>
             </div>
             <div>
                 <Outlet/>

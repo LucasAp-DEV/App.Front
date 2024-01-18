@@ -7,21 +7,17 @@ const Dashboard = () => {
 
     const navigate = useNavigate()
 
-    const rotas = () => {
-        navigate("/Aba01");
-    }
-
 
     return (
         <div>
             <div className='dashboard'>
-                <a href='/' className='icon'> Dashboard</a>
+                <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
                 <ul>
                     <li>
-                        <a href='/aba01'> Aba01 </a>
+                        <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
                     </li>
                     <li>
-                        <a href='/aba02'> aba02 </a>
+                        <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
                     </li>
                 </ul>
             </div>

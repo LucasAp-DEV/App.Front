@@ -35,7 +35,7 @@ const Login = () => {
             if (response.ok) {
                 const data = await response.json();
                 const authToken = data.token
-                localStorage.setItem("token", authToken); //Inserir o token no Storage
+                localStorage.setItem("token", authToken);
                 navigate('/');
                 }else {
                   const data = await response.json();

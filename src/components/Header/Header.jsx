@@ -10,7 +10,7 @@ export default function Header() {
   return (
 
       <div className='dashboard'>
-                <Button onClick={() => { navigate('/') }} 
+                <Button onClick={() => { navigate('/menu') }} 
                 text="Inicio"
                 />
                 <ul>
@@ -20,7 +20,6 @@ export default function Header() {
 
                     <Button onClick={() => { navigate('/login') }} 
                     text='Sair' alt='Sair' title='Sair'
-                    //text={<img src="https://img.icons8.com/material/48/000000/user-male-circle--v1.png" alt='Sair' title='Sair'/>}
                     />
                 </ul>
             </div>

@@ -36,7 +36,7 @@ const Login = () => {
                 const data = await response.json();
                 const authToken = data.token
                 localStorage.setItem("token", authToken);
-                navigate('/dashboard');
+                navigate('/menu');
                 }else {
                   const data = await response.json();
                   setErrorLogin(data.error || 'Erro de login');

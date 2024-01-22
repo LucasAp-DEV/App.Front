@@ -7,14 +7,14 @@ const Usuarios = () => {
     const navigate = useNavigate()
 
     const rotas = () => {
-        navigate("/aba02");
+        navigate("/menu");
     }
 
 
     return (
         <div>
-            <Button onClick={rotas} text='Aba02' />
-            <h1> Usuarios </h1>
+            <Button onClick={rotas} text='Menu' />
+            <h1> Enviar para Menu </h1>
         </div>
     );
 }

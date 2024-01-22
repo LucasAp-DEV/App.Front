@@ -1,10 +1,10 @@
 import {Routes, Route, useNavigate} from "react-router-dom";
 import Layout from './pages/Layout/Layout';
-import Aba02 from './pages/Aba02/Aba02';
+import Menu from './pages/Menu/Menu';
 import Login from './pages/Login/Login';
 import { isAuthentication } from "./auth";
 import { useEffect } from "react";
-import Usuarios from "./pages/Aba01/Usuarios";
+import Usuarios from "./pages/Usuarios/Usuarios";
 
 function App() {
 
@@ -22,9 +22,9 @@ function App() {
         <Routes>
             <Route path="/login" element={<Login />} />
               <Route path="/" element={<Layout />}>
+                <Route path="menu" element={<Menu />} />
                 <Route path="usuarios" element={<Usuarios />} />
-                <Route path="usuarios" element={<Usuarios />} />
-                <Route path="aba02" element={<Aba02 />} />
+                <Route path="aba02" element={<Menu />} />
               </Route>
         </Routes>
     );

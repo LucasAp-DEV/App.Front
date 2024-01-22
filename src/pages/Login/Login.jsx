@@ -2,6 +2,7 @@ import './Login.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -20,21 +21,18 @@ const Login = () => {
     }
     
     const onSubmit = async () => {
-      try{
-            const response = await fetch('http://localhost:8080/auth/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                login,
-                password,
-              }),
-            });
+      try {
+        const response = await axios.post('http://localhost:8080/auth/login', {
+          login,
+          password,
+        }, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
 
-            if (response.ok) {
-                const data = await response.json();
-                const authToken = data.token
+            if (response.status === 200) {
+                const authToken = response.data.token;
                 localStorage.setItem("token", authToken);
                 navigate('/menu');
                 }else {

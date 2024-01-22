@@ -11,18 +11,14 @@ const Dashboard = () => {
     return (
         <div>
             <div className='dashboard'>
-                <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
+                <Button onClick={() => { navigate('/') }} text='Dashboard' />
                 <ul>
-                    <li>
-                        <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
-                    </li>
-                    <li>
-                        <Button onClick={()=> {navigate('/dashboard')}} text='Dashboard' />
-                    </li>
+                    <Button onClick={() => { navigate('/aba01') }} text='Aba01' />
+                    <Button onClick={() => { navigate('/aba02') }} text='Aba02' />
                 </ul>
             </div>
             <div>
-                <Outlet/>
+                <Outlet />
             </div>
         </div>
     );

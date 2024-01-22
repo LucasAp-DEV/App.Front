@@ -14,6 +14,7 @@ const Aba01 = () => {
     return (
         <div>
             <Button onClick={rotas} text='Aba02' />
+            <h1> Teste </h1>
         </div>
     );
 }

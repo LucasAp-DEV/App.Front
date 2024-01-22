@@ -7,13 +7,13 @@ const Aba02 = () => {
     const navigate = useNavigate()
 
     const rotas = () => {
-        navigate("/Aba01");
+        navigate("/usuarios");
     }
 
 
     return (
         <div>
-            <Button onClick={rotas} text='Aba01' />
+            <Button onClick={rotas} text='Usuarios' />
         </div>
     );
 }

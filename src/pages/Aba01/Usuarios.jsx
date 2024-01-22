@@ -2,22 +2,22 @@ import { useNavigate } from 'react-router-dom'
 import Button from '../../components/Button/Button';
 
 
-const Aba01 = () => {
+const Usuarios = () => {
 
     const navigate = useNavigate()
 
     const rotas = () => {
-        navigate("/Aba02");
+        navigate("/aba02");
     }
 
 
     return (
         <div>
             <Button onClick={rotas} text='Aba02' />
-            <h1> Teste </h1>
+            <h1> Usuarios </h1>
         </div>
     );
 }
 
 
-export default Aba01;
+export default Usuarios;

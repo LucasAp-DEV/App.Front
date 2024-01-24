@@ -5,6 +5,7 @@ import Login from './pages/Login/Login';
 import { isAuthentication } from "./auth";
 import { useEffect } from "react";
 import Usuarios from "./pages/Usuarios/Usuarios";
+import Register from "./pages/Register/Register";
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
               <Route path="/" element={<Layout />}>
                 <Route path="menu" element={<Menu />} />
                 <Route path="usuarios" element={<Usuarios />} />
-                <Route path="aba02" element={<Menu />} />
+                <Route path="register" element={<Register />} />
               </Route>
         </Routes>
     );

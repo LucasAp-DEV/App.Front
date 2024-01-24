@@ -17,19 +17,21 @@ const RegisterForm = ({login, password, onSubmit, onChangeLogin, onChangePasswor
                     onChange={onChangeLogin}
                 />
                 <Input
-                    placeholder={"Senha:"}
+                    placeholder={"Senha:"} 
                     type='password'
                     name='passwordInput'
                     value={password}
                     onChange={onChangePassword}
                 />
-                <label name="ADMIN"> ADMIN ? </label>
+
+                {/* <label name="ADMIN"> ADMIN ? </label>
                 <input name="ADMIN" type='checkbox' value={isAdmin} onChange={(e) => {
                     const value = e.target.value;
                     setIsAdmin((state) => !state)
                     console.log(value);
                      
-                }} />
+                }} /> */}
+                
                 <p>
                     <Button onClick={onSubmit} text='Registrar' />
                 </p>

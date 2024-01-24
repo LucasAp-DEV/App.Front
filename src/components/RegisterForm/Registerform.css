@@ -1,0 +1,21 @@
+.register {
+    width: 600px;
+    margin-top: 200px;
+    margin-left: 450px;
+    text-align: center;
+  }
+  
+  .register input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 10px;
+  }
+  
+  .register p {
+    text-align: center;
+  }
+  
+  .register button {
+    padding: 20px;
+  }

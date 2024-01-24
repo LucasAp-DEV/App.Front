@@ -1,14 +1,12 @@
 import React from 'react'
-import "./Register.css"
-import LoginForm from '../../components/LoginForm/LoginForm'
+import RegisterForm from '../../components/RegisterForm/RegisterForm'
 
 const Register = () => {
 
   return (
-    <div>
-        
-      <LoginForm/>
-
+    <div>      
+      <RegisterForm
+      />
     </div>
   )
 }

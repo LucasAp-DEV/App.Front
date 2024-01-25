@@ -14,6 +14,10 @@ export default function Header() {
                 text="Inicio"
                 />
                 <ul>
+                    <Button onClick={() => { navigate('/usuarios') }} 
+                    text='Usuarios' alt='Usuarios' title='Usuarios'
+                    />
+
                     <Button onClick={() => { navigate('/register') }} 
                     text='Register' alt='Register' title='Register'
                     />

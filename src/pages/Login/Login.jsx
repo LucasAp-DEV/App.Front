@@ -48,6 +48,10 @@ const Login = () => {
         console.log(login, password);
     }
 
+    setTimeout(() => {
+      setErrorLogin('');
+    }, 4000);
+
     return (
       <div className='container'>
             <div className='login'>

@@ -37,12 +37,16 @@ const Register = () => {
       setErrorRegister('Registrado com Sucesso');
 
     } catch (error) {
-      setErrorRegister('Erro de cadastro');
+      setErrorRegister('Erro no Registro, insira as credenciais');
       console.error('Erro no cadastro:', error);
     }
 
     console.log(login, password, role);
   }
+
+  setTimeout(() => {
+    setErrorRegister('');
+  }, 4000);
 
   return (
     <div>

@@ -1,8 +1,7 @@
 import './Input.css'
 
-const Input = ({label, inputName, errorMessage, value, onChange, type = "text", placeholder}) => {
+const Input = ({label, inputName, value, onChange, type = "text", placeholder}) => {
     return (
-        <div>
             <div>
                 <label for={inputName}>{label}</label>
                 <input 
@@ -14,12 +13,6 @@ const Input = ({label, inputName, errorMessage, value, onChange, type = "text", 
                     placeholder={placeholder}
                 />
             </div>
-            {
-                errorMessage ? (
-                    <p className='errorMessage'>{errorMessage}</p>
-                ) : <></>
-            }
-        </div>
     );
 }
 

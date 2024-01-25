@@ -8,6 +8,7 @@ const LoginForm = ({ login, password, onChangeLogin, onChangePassword, onSubmit 
     <div className='formContainer1'>
       <Input
         placeholder='Login:'
+        type='text'
         name='LoginInput'
         value={login}
         onChange={onChangeLogin}

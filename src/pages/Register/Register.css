@@ -1,11 +1,19 @@
+.register-container {
+  width: 400px;
+  height: auto;
+  margin: 150px auto;
+  text-align: center;
+  padding: 20px;
+}
+
 .error {
-    padding: 10px 50px;
-    font-size: 21px;
-    background-color: #2e2b2be7;
-    color: #ffffff;
-    border-radius: 10px;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  padding: 10px 50px;
+  font-size: 21px;
+  background-color: #2e2b2be7;
+  color: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

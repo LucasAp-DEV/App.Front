@@ -36,33 +36,37 @@ const Register = () => {
       console.log('Cadastro bem-sucedido:', response.data);
       setErrorRegister('Registrado com Sucesso');
 
+      setLogin("");
+      setPassword("");
+
     } catch (error) {
       setErrorRegister('Erro no Registro, insira as credenciais');
       console.error('Erro no cadastro:', error);
     }
 
     console.log(login, password, role);
+
   }
 
   setTimeout(() => {
     setErrorRegister('');
-  }, 4000);
+  }, 5000);
 
   return (
-    <div>
-      <RegisterForm
-        login={login}
-        password={password}
-        role={role}
-        onChangeLogin={onChangeLogin}
-        onChangePassword={onChangePassword}
-        onchangeRole={onChangeRole}
-        onSubmit={onSubmit}
-      />
-      <div>
-        {errorRegister && <p className="error">{errorRegister}</p> }
+      <div className="register-container">
+          <RegisterForm
+            login={login}
+            password={password}
+            role={role}
+            onChangeLogin={onChangeLogin}
+            onChangePassword={onChangePassword}
+            onchangeRole={onChangeRole}
+            onSubmit={onSubmit}
+          />
+        <div>
+          {errorRegister && <p className="error">{errorRegister}</p> }
+        </div>
       </div>
-    </div>
 
   )
 }

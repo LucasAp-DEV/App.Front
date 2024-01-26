@@ -22,7 +22,7 @@ export default function Header() {
                     text='Register' alt='Register' title='Register'
                     />
 
-                    <Button onClick={() => { navigate('/login') }} 
+                    <Button onClick={() => { navigate('/login'); localStorage.removeItem('token')}} 
                     text='Sair' alt='Sair' title='Sair'
                     />
                 </ul>

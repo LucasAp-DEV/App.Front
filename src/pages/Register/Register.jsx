@@ -19,25 +19,31 @@ const Register = () => {
   }
 
   const onChangeRole = () => {
-    setRole((currentRole) => (currentRole === 'USER' ? 'ADMIN' : 'USER'));
+    setRole((currentRole) => (currentRole === 'USER' ? 'ADMIN' : 'USER')); //ALTERAR ROLE ENTRE ADMIN E USER
   }
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-
+  const onSubmit = async () => {
+    
     try {
       const response = await api.post('auth/register', {
-          login,
-          password,
-          role,
-        },
+        login,
+        password,
+        role,
+      },
       );
-      
-      console.log('Cadastro bem-sucedido:', response.data);
-      setErrorRegister('Registrado com Sucesso');
 
-      setLogin("");
-      setPassword("");
+      if (response.status === 200) {
+        console.log('Cadastro bem-sucedido:', response.data);
+        setErrorRegister('Registrado com Sucesso');
+
+        setLogin("");
+        setPassword("");
+        
+      } else {
+        const data = await response.json();
+        setErrorRegister(data.error || 'Erro ao Registrar usuario');
+        console.log("Erro ao reristrar usuario");
+      }
 
     } catch (error) {
       setErrorRegister('Erro no Registro, insira as credenciais');
@@ -48,25 +54,21 @@ const Register = () => {
 
   }
 
-  setTimeout(() => {
-    setErrorRegister('');
-  }, 5000);
-
   return (
-      <div className="register-container">
-          <RegisterForm
-            login={login}
-            password={password}
-            role={role}
-            onChangeLogin={onChangeLogin}
-            onChangePassword={onChangePassword}
-            onchangeRole={onChangeRole}
-            onSubmit={onSubmit}
-          />
-        <div>
-          {errorRegister && <p className="error">{errorRegister}</p> }
-        </div>
+    <div className="register-container">
+      <RegisterForm
+        login={login}
+        password={password}
+        role={role}
+        onChangeLogin={onChangeLogin}
+        onChangePassword={onChangePassword}
+        onchangeRole={onChangeRole}
+        onSubmit={onSubmit}
+      />
+      <div>
+        {errorRegister && <p className="error">{errorRegister}</p>}
       </div>
+    </div>
 
   )
 }

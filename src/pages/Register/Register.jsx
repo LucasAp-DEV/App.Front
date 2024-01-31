@@ -2,6 +2,7 @@ import RegisterForm from '../../components/RegisterForm/RegisterForm'
 import './Register.css'
 import { useState } from 'react';
 import { api } from '../../api';
+//import axios from 'axios';
 
 const Register = () => {
 
@@ -9,6 +10,9 @@ const Register = () => {
   const [password, setPassword] = useState();
   const [role, setRole] = useState('USER');
   const [errorRegister, setErrorRegister] = useState();
+
+  const token = localStorage.getItem('token');
+
 
   const onChangeLogin = (event) => {
     setLogin(event.target.value)
@@ -23,14 +27,22 @@ const Register = () => {
   }
 
   const onSubmit = async () => {
-    
+
+
     try {
-      const response = await api.post('auth/register', {
+      const response = await api.post('http://localhost:8080/auth/register', {
         login,
         password,
-        role,
+        role
       },
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        }
       );
+
+      console.log(response);
 
       if (response.status === 200) {
         console.log('Cadastro bem-sucedido:', response.data);
@@ -38,7 +50,7 @@ const Register = () => {
 
         setLogin("");
         setPassword("");
-        
+
       } else {
         const data = await response.json();
         setErrorRegister(data.error || 'Erro ao Registrar usuario');

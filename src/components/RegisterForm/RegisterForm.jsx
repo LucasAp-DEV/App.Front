@@ -20,10 +20,7 @@ const RegisterForm = ({ login, password, role, onSubmit, onChangeLogin, onchange
                 value={password}
                 onChange={onChangePassword}
             />
-            <label className='role-label'>
-                <strong>ADMINISTRADOR</strong>
-            </label>
-            <Input
+            <input
                 type='checkbox'
                 name='roleInput'
                 value={role}

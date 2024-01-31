@@ -1,5 +1,5 @@
 .dashboard {
-    background-color: #273ec0;
+    background-color: rgb(27, 27, 66);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,10 +17,10 @@
 }
 
 .dashboard button {
-    background-color: #273ec0;
+    background-color: rgb(27, 27, 66);
     color: #ffffff;
 }
 
 .dashboard button:hover {
-    background-color: #273ec0;
+    background-color: rgb(27, 27, 66);
 }

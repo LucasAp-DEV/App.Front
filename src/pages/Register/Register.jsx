@@ -2,7 +2,6 @@ import RegisterForm from '../../components/RegisterForm/RegisterForm'
 import './Register.css'
 import { useState } from 'react';
 import { api } from '../../api';
-//import axios from 'axios';
 
 const Register = () => {
 
@@ -28,9 +27,14 @@ const Register = () => {
 
   const onSubmit = async () => {
 
+    if (!login || !password) {
+      setErrorRegister("Por favor insira as credenciais.");
+      return;
+    }
+
 
     try {
-      const response = await api.post('http://localhost:8080/auth/register', {
+      const response = await api.post('/auth/register', {
         login,
         password,
         role
@@ -41,8 +45,6 @@ const Register = () => {
           }
         }
       );
-
-      console.log(response);
 
       if (response.status === 200) {
         console.log('Cadastro bem-sucedido:', response.data);
@@ -58,27 +60,29 @@ const Register = () => {
       }
 
     } catch (error) {
-      setErrorRegister('Erro no Registro, insira as credenciais');
+      setErrorRegister('Você não possui permissão');
       console.error('Erro no cadastro:', error);
     }
 
-    console.log(login, password, role);
-
   }
 
+  console.log(password, login, role);
+
   return (
-    <div className="register-container">
-      <RegisterForm
-        login={login}
-        password={password}
-        role={role}
-        onChangeLogin={onChangeLogin}
-        onChangePassword={onChangePassword}
-        onchangeRole={onChangeRole}
-        onSubmit={onSubmit}
-      />
-      <div>
-        {errorRegister && <p className="error">{errorRegister}</p>}
+    <div className='fundo'>
+      <div className="register-container">
+        <RegisterForm
+          login={login}
+          password={password}
+          role={role}
+          onChangeLogin={onChangeLogin}
+          onChangePassword={onChangePassword}
+          onchangeRole={onChangeRole}
+          onSubmit={onSubmit}
+        />
+        <div>
+          {errorRegister && <p className="error">{errorRegister}</p>}
+        </div>
       </div>
     </div>
 

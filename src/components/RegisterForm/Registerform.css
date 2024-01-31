@@ -1,3 +1,5 @@
+
+
 .register input {
   width: calc(100% - 20px);
   margin-bottom: 20px;
@@ -7,20 +9,26 @@
   box-sizing: border-box;
 }
 
-.register label {
-  margin-bottom: 10px;
-}
-
-.register strong {
-  font-weight: bold;
-}
-
 .register p {
   text-align: center;
 }
 
 .register button {
   padding: 10px;
+  background-color: rgb(27, 27, 66);
 }
 
+.register input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: auto;
+  height: auto;
+  border: 2px solid #585454;
+  border-radius: 5px;
+  outline: none;
+}
 
+.register input[type="checkbox"]:checked {
+  background-color: #585454;
+}

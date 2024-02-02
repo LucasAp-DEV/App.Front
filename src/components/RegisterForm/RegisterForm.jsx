@@ -6,6 +6,7 @@ const RegisterForm = ({ login, password, role, onSubmit, onChangeLogin, onchange
 
     return (
         <div className='register'>
+            
             <Input
                 placeholder={"Digite um login"}
                 type='text'
@@ -20,6 +21,7 @@ const RegisterForm = ({ login, password, role, onSubmit, onChangeLogin, onchange
                 value={password}
                 onChange={onChangePassword}
             />
+            <h3>ADMIN</h3>
             <input
                 type='checkbox'
                 name='roleInput'

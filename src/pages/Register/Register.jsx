@@ -69,7 +69,7 @@ const Register = () => {
   console.log(password, login, role);
 
   return (
-    <div className='fundo'>
+    <div>
       <div className="register-container">
         <RegisterForm
           login={login}

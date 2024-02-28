@@ -20,6 +20,11 @@ const LoginForm = ({ login, password, onChangeLogin, onChangePassword, onSubmit 
         value={password}
         onChange={onChangePassword}
       />
+      <div style={{ marginTop:'8px'}}>
+          <a href="/register" className="forgotPassword">
+            Registrar-se
+          </a>
+      </div>
       <p>
         <Button onClick={onSubmit} text='Entrar' />
       </p>

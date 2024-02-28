@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  box-shadow: 1px 3px 50px 1px rgb(153, 160, 160);
+  box-shadow: 1px 3px 50px 1px rgb(102, 105, 105);
 }
 
 .error {

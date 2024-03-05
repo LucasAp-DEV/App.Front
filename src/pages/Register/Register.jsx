@@ -1,5 +1,4 @@
 import RegisterForm from '../../components/RegisterForm/RegisterForm'
-import './Register.css'
 import { useState } from 'react';
 import { api } from '../../api';
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import './LoginForm.css'
 import Input from '../../components/Button/Input';
 import Button from '../../components/Button/Button';
 
@@ -20,11 +19,11 @@ const LoginForm = ({ login, password, onChangeLogin, onChangePassword, onSubmit 
         value={password}
         onChange={onChangePassword}
       />
-      <div style={{ marginTop:'8px'}}>
-          <a href="/register" className="forgotPassword">
-            Registrar-se
-          </a>
-      </div>
+        <div style={{ marginTop:'8px'}}>
+            <a href="/register" className="forgotPassword">
+              Registrar-se
+            </a>
+        </div>
       <p>
         <Button onClick={onSubmit} text='Entrar' />
       </p>

@@ -1,27 +1,53 @@
 import Button from '../Button/Button';
 import Input from '../Button/Input';
-import './Registerform.css'
 
 const RegisterForm = ({ login, password, role, onSubmit, onChangeLogin, onchangeRole, onChangePassword }) => {
 
     return (
         <div className='register'>
-            
-            <Input
+                <Input
                 placeholder={"Digite um login"}
                 type='text'
                 name='LoginInput'
                 value={login}
                 onChange={onChangeLogin}
             />
-            <Input
+                <Input
                 placeholder={"Digite uma senha"}
                 type='password'
                 name='passwordInput'
                 value={password}
                 onChange={onChangePassword}
             />
-            <h3>ADMIN</h3>
+                <Input
+                placeholder={"Digite uma senha"}
+                type='password'
+                name='passwordInput'
+                value={password}
+                onChange={onChangePassword}
+            />
+                <Input
+                placeholder={"Digite uma senha"}
+                type='password'
+                name='passwordInput'
+                value={password}
+                onChange={onChangePassword}
+            />
+                <Input
+                placeholder={"Digite uma senha"}
+                type='password'
+                name='passwordInput'
+                value={password}
+                onChange={onChangePassword}
+            />
+                <Input
+                placeholder={"Digite uma senha"}
+                type='password'
+                name='passwordInput'
+                value={password}
+                onChange={onChangePassword}
+            />
+            <h3>Cadastrar como proprietario ?</h3>
             <input
                 type='checkbox'
                 name='roleInput'
@@ -29,8 +55,14 @@ const RegisterForm = ({ login, password, role, onSubmit, onChangeLogin, onchange
                 onChange={onchangeRole}
             />
             <p>
-                <Button onClick={onSubmit} text='Registrar' />
+                <Button onClick={onSubmit} text='Registrar-se' />
             </p>
+
+            <div style={{ marginTop:'8px'}}>
+                <a href="/login" className="forgotPassword">
+                    Cancelar Registro
+                </a>
+            </div>
         </div>
     );
 }
